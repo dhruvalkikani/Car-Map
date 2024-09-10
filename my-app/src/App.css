@@ -1,0 +1,109 @@
+/* Main layout for two-column design */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+/* Styling for section headers */
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+  /* Left column (Car List) */
+  .left-column {
+    flex: 2;
+    max-width: 400px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: 100vh; /* Full height */
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick to the top */
+  }
+  
+  /* Right column (Map) */
+  .right-column {
+    flex: 3;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+  }
+  
+  /* Make the map responsive */
+  .right-column > div {
+    height: calc(100vh - 40px); /* Full height minus padding */
+    width: 100%;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .main-layout {
+      flex-direction: column;
+    }
+  
+    .left-column {
+      position: relative; /* No longer sticky on small screens */
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .right-column {
+      height: 400px; /* Smaller map for mobile */
+    }
+  }
+  
+  /* Filter section styling */
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search-bar, .number-input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Car list styling */
+  .car-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .car-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .car-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+  }
+  
+  .car-card h3 {
+    margin-top: 0;
+  }
+  
+  p {
+    margin: 8px 0;
+  }
+  
